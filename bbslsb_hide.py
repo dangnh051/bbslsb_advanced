@@ -5,9 +5,17 @@ import math
 class BlumBlumShub:
     def __init__(self, seed, p=0, q=0):
         # Ham kiem tra so nguyen to
+        def is_prime(n):
+            if n < 2:
+                return False
+            for i in range(2, int(math.sqrt(n)) + 1):
+                if n % i == 0:
+                    return False
+            return True
 
         # Ham kiem tra so nguyen to Blum
-      
+        def is_blum_prime(n):
+            return is_prime(n) and n % 4 == 3
 
         if p == 0 or q == 0:
             self.p = 30091
@@ -17,6 +25,8 @@ class BlumBlumShub:
             self.q = q
 
         # Kiem tra p va q co phai la so nguyen to hay khong
+        if not (is_blum_prime(self.p) and is_blum_prime(self.q)):
+            raise ValueError("p and q must be Blum primes (primes congruent to 3 mod 4)")
 
         self.M = self.p * self.q
         self.state = seed % self.M
