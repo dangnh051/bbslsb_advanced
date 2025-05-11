@@ -19,7 +19,7 @@ class BlumBlumShub:
 def extract_message(image_path, seed, max_length=1000):
     img = Image.open(image_path)
     
-    # Chuyển đổi ảnh sang RGB nếu cần thiết
+    # Chuyen doi anh sang RGB neu can thiet
     if img.mode != 'RGB':
         img = img.convert('RGB')
     

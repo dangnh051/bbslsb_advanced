@@ -4,9 +4,9 @@ import math
 
 class BlumBlumShub:
     def __init__(self, seed, p=0, q=0):
-        # Hàm kiểm tra số nguyên tố
+        #Ham kiem tra so nguyen to
         
-        # Hàm kiểm tra số nguyên tố Blum
+        #Ham kiem tra so nguyen to Blum
         
         
         if p == 0 or q == 0:
@@ -16,7 +16,7 @@ class BlumBlumShub:
             self.p = p
             self.q = q
         
-        # Kiểm tra p và q có phải là số nguyên tố Blum
+        #Kiem tra p va q co phai la so nguyen to hay khong
         
         
         self.n = self.p * self.q
@@ -29,7 +29,7 @@ class BlumBlumShub:
 def hide_message(image_path, message, output_path, seed):
     img = Image.open(image_path)
     
-    # Chuyển đổi ảnh sang RGB nếu cần thiết
+    #Chuyen doi anh sang RGB neu can thiet
     if img.mode != 'RGB':
         img = img.convert('RGB')
     
